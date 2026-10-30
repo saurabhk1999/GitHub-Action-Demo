@@ -2,14 +2,14 @@ name: Testing workflow variables
 
 on:
  workflow_dispatch
- 
+#env variable at the top lavel workflow 
 env:
   cloud: google-cloud
 
 jobs:
   greeting_job:
    runs-on: ubuntu-latest
-
+#variable within the workflow
    env:
      greeting: Hello
 
@@ -17,6 +17,6 @@ jobs:
      - name: "Say Hello Mona, its monday"
 
        run: echo "$greeting $first_name is using $cloud"
-
+#variable under the steps
        env:
          first_name: Saurabh
